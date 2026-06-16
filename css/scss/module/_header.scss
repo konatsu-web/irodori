@@ -1,0 +1,162 @@
+@use "../setting/colors" as *;
+@use "../setting/fonts" as *;
+@use "../mixin/responsive" as *;
+
+.header {
+  &__inner {
+    height: 70px;
+    background-color: $color_primary;
+    padding: 0 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+
+    @include responsive(pc) {
+      padding: 20px 40px;
+      height: 80px;
+    }
+  }
+
+  &__logo {
+  }
+
+  &__logo-link {
+    font-family: $font-sub;
+    font-style: italic;
+    color: $color_white;
+    font-size: 2.5rem;
+    letter-spacing: 0.06em;
+    font-weight: $demi-bold;
+  }
+
+  //    ナビゲーション
+
+  &__nav {
+    position: fixed;
+    top: 70px;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background-color: $color_primary;
+
+    transform: translateX(100%);
+    transition: transform 0.4s;
+
+    z-index: 90;
+
+    @include responsive(pc) {
+      position: static;
+      transform: none;
+      height: auto;
+      width: initial;
+      height: initial;
+    }
+
+    &.is-open {
+      transform: translateX(0);
+    }
+  }
+
+  &__nav-inner {
+  }
+
+  &__menu {
+    @include responsive(pc) {
+      font-size: 1.125rem;
+      display: flex;
+      gap: 40px;
+    }
+
+    li {
+      &:nth-of-type(1) {
+        a {
+          border-top: 1px solid $color_white;
+
+          @include responsive(pc) {
+            border: none;
+          }
+        }
+      }
+    }
+
+    a {
+      color: $color_white;
+      padding: 24px 20px;
+      border-bottom: 1px solid $color_white;
+
+      @include responsive(pc) {
+        border: none;
+        padding: 0;
+      }
+    }
+  }
+
+  //    ハンバーガー
+
+  .hamburger {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    background: $color_primary;
+    z-index: 100;
+
+    @include responsive(pc) {
+      display: none;
+    }
+
+    span {
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      border-radius: 3px;
+      background: $color_white;
+
+      left: 0;
+      transition:
+        transform 0.6s ease,
+        opacity 0.3s ease,
+        top 0.6s ease,
+        bottom 0.6s ease;
+
+      &:nth-child(1) {
+        transform: translateY(-12.5px);
+      }
+
+      &:nth-child(2) {
+        top: 12.5px;
+      }
+
+      &:nth-child(3) {
+        transform: translateY(7.5px);
+      }
+    }
+
+    &.is-open {
+      span {
+        &:nth-child(1) {
+          transform: rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+}
+
+//    body制御
+
+html.is-open,
+body.is-open {
+  overflow: hidden;
+}

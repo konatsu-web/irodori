@@ -1,0 +1,104 @@
+@use "../setting/colors" as *;
+@use "../setting/fonts" as *;
+@use "../mixin/responsive" as *;
+
+.footer {
+  background-color: $color_primary;
+  color: $color_white;
+  padding: 40px 0;
+
+  @include responsive(pc) {
+    padding: 40px 0 24px;
+  }
+
+  &__inner {
+  }
+
+  &__content {
+    @include responsive(pc) {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid $color_white;
+    }
+  }
+
+  &__nav {
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px 40px;
+    
+    @include responsive(pc) {
+      font-size: 1.125rem;
+    }
+  }
+
+  &__info {
+    padding-bottom: 24px;
+    border-bottom: 1px solid $color_white;
+    font-size: 0.875rem;
+    line-height: 1.6;
+
+    @include responsive(pc) {
+      border: none;
+    }
+  }
+
+  &__logo {
+    font-size: 2.5rem;
+    line-height: 1;
+    letter-spacing: 0.06em;
+    font-weight: $demi-bold;
+    text-align: center;
+    font-family: $font-sub;
+    font-style: italic;
+
+    margin-top: 40px;
+
+    @include responsive(pc) {
+      text-align-last: left;
+      margin-top: 0;
+    }
+  }
+
+  &__address {
+    font-style: normal;
+    margin-top: 24px;
+
+    @include responsive(pc) {
+      margin-top: 8px;
+    }
+  }
+
+  &__tel {
+    display: flex;
+    gap: 4px;
+  }
+
+  &__time {
+  }
+
+  &__sub-menu {
+    font-size: 0.75rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    margin-top: 24px;
+  }
+
+  &__copyright {
+    font-size: 0.75rem;
+    text-align: center;
+
+    margin-top: 40px;
+  }
+}

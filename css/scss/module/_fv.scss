@@ -1,0 +1,89 @@
+@use "../setting/colors" as *;
+@use "../setting/fonts" as *;
+@use "../mixin/responsive" as *;
+
+.fv {
+  position: relative;
+  width: 100%;
+  height: calc(80vh - 70px);
+  overflow: hidden;
+
+  @include responsive(pc) {
+    height: calc(80vh - 80px);
+  }
+
+  &_slider {
+    position: absolute;
+    inset: 0;
+  }
+
+  &__slide {
+    position: absolute;
+    inset: 0;
+
+    background-position: center 70%;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    opacity: 0;
+    transition: opacity 1.5s ease;
+
+    &.active {
+      opacity: 1;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(2px);
+    }
+  }
+
+  &__slide:nth-child(1) {
+    background-image: url("../images/img/bg_main01-sp.webp");
+
+    @include responsive(pc) {
+      background-image: url("../images/img/bg_main01.webp");
+    }
+  }
+
+  &__slide:nth-child(2) {
+    background-image: url("../images/img/bg_main02-sp.webp");
+
+    @include responsive(pc) {
+      background-image: url("../images/img/bg_main02.webp");
+    }
+  }
+
+  &__slide:nth-child(3) {
+    background-image: url("../images/img/bg_main03-sp.webp");
+
+    @include responsive(pc) {
+      background-image: url("../images/img/bg_main03.webp");
+    }
+  }
+
+  &__inner {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative; // フィルターより前面に出す
+    z-index: 1;
+  }
+
+  &__message {
+    color: $color_white;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 1);
+    text-align: center;
+
+    @include responsive(pc) {
+      font-size: 2rem;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+// レスポンシブ設定
+$breakpoints: (
+  min: 320px,
+  sp: 375px,
+  tablet: 768px,
+  pc: 1024px,
+  xl: 1440px,
+);
+@mixin responsive($breakpoint) {
+  @media (width >= #{map-get($breakpoints,$breakpoint)}) {
+    @content;
+  }
+}

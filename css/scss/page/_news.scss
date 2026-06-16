@@ -1,0 +1,54 @@
+@use "../setting/colors" as *;
+@use "../setting/fonts" as *;
+@use "../mixin/responsive" as *;
+
+.news {
+  padding-top: 24px;
+  padding-bottom: 80px;
+
+  background-color: $color_main;
+
+  @include responsive(pc) {
+    padding-top: 40px;
+    padding-bottom: 120px;
+  }
+
+  &__inner {
+  }
+
+  &__list {
+  }
+
+  &__item {
+    padding: 24px 0;
+    border-bottom: 1px solid $color_txt;
+
+    @include responsive(pc) {
+      padding: 24px 16px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @include responsive(pc) {
+      flex-direction: row;
+      gap: 40px;
+    }
+
+    time {
+      line-height: 1.6;
+      font-weight: $demi-bold;
+
+      @include responsive(pc) {
+        font-weight: $regular;
+      }
+    }
+
+    span {
+      line-height: 1.6;
+    }
+  }
+}

@@ -1,0 +1,141 @@
+/* ==============================
+   ミニマルリセットCSS
+   ============================== */
+
+/* 全要素のボックスサイズ統一 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ページ全体の余白・パディングをリセット */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button,
+ul,
+ol,
+figure,
+blockquote,
+dl,
+dd,
+table,
+th,
+td,
+fieldset,
+legend {
+  margin: 0;
+  padding: 0;
+}
+
+/* テキスト・フォントの初期設定 */
+html {
+  font-size: 100%; /* 16px */
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family:
+    "Yu Gothic", "游ゴシック", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-size: 1rem; /* 16px基準 */
+  line-height: 1;
+  letter-spacing: 0;
+  color: #333;
+  font-weight: 400;
+}
+
+/* リストの記号を消す */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 画像の調整 */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* リンクの装飾リセット */
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s;
+  font: inherit;
+}
+
+/* ホバー効果 */
+a:hover {
+  opacity: 0.8;
+}
+@media screen and (max-width: 768px) {
+  a:hover {
+    opacity: 1;
+  }
+}
+
+/* ボタン・フォーム要素の初期化 */
+button,
+input,
+select,
+textarea {
+  background: none;
+  border: none;
+  outline: none;
+  font: inherit; /* ←これが重要 */
+  color: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  font-size: 1rem; /* ←ここでフォントサイズを固定 */
+}
+
+/* ボタンのカーソル表示 */
+button {
+  cursor: pointer;
+}
+
+/* チェックボックス・ラジオボタンの非表示（必ずラベルと組み合わせて使う） */
+input[type="checkbox"],
+input[type="radio"] {
+  display: none;
+}
+
+/* テーブルリセット */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+th,
+td {
+  text-align: left;
+  font: inherit;
+}
+
+/* フォーム関連 */
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+legend {
+  display: block;
+  font: inherit;
+}

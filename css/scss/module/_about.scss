@@ -1,0 +1,64 @@
+@use "../setting/colors" as *;
+@use "../setting/fonts" as *;
+@use "../mixin/responsive" as *;
+
+.about {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  background-color: $color_main;
+
+  @include responsive(pc) {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  &__inner {
+  }
+
+  &__wrap {
+    @include responsive(pc) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__img {
+    max-width: 240px;
+    max-height: 240px;
+    margin: 0 auto;
+
+    @include responsive(pc) {
+      max-width: 320px;
+      max-height: 320px;
+    }
+
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  &__content {
+    margin-top: 24px;
+
+    line-height: 1.6;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include responsive(pc) {
+      max-width: 580px;
+    }
+  }
+
+  &__link {
+    margin-top: 16px;
+    text-align: right;
+
+    @include responsive(pc) {
+      margin-top: 0;
+    }
+  }
+}

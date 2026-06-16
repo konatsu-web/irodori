@@ -1,0 +1,21 @@
+@use "../setting/colors" as *;
+@use "../setting/fonts" as *;
+@use "../mixin/responsive" as *;
+
+.link {
+  color: $color_secondary;
+
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(45deg);
+    margin-left: 8px;
+
+    position: relative;
+    top: -2px;
+  }
+}

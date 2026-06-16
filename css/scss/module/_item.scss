@@ -1,0 +1,104 @@
+@use "../setting/colors" as *;
+@use "../setting/fonts" as *;
+@use "../mixin/responsive" as *;
+
+.item {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  @include responsive(pc) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  &__inner {
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__card {
+    &:nth-child(1) {
+      width: 100%;
+      margin-bottom: 24px;
+
+      @include responsive(pc) {
+        max-width: 300px;
+        margin-bottom: 0;
+      }
+
+      .lineup__img {
+        margin-bottom: 16px;
+      }
+    }
+
+    &:nth-child(2) {
+      width: 48%;
+
+      @include responsive(pc) {
+        max-width: 300px;
+      }
+    }
+
+    &:nth-child(3) {
+      width: 48%;
+
+      @include responsive(pc) {
+        max-width: 300px;
+      }
+    }
+  }
+
+  &__link {
+  }
+
+  &__img {
+    margin-bottom: 8px;
+
+    @include responsive(pc) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+
+    @include responsive(pc) {
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-end;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__title {
+    color: $color_txt;
+    font-weight: $demi-bold;
+
+    @include responsive(pc) {
+      font-size: 1.125rem;
+    }
+  }
+
+  &__label {
+    color: $color_secondary;
+    font-size: 0.75rem;
+    border-radius: 24px;
+  }
+
+  &__price {
+    font-size: 0.875rem;
+    width: 100%;
+  }
+
+  &__btn {
+  }
+}

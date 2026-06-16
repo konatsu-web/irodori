@@ -1,0 +1,29 @@
+// base
+@use "./scss/base/base";
+
+// mixin
+@use "./scss/mixin/responsive";
+
+// setting
+@use "./scss/setting/colors";
+@use "./scss/setting/fonts";
+
+// parts
+@use "./scss/parts/sec-title";
+@use "./scss/parts/btn";
+@use "./scss/parts/link";
+@use "./scss/parts/back-to-top";
+@use "./scss/parts/breadcrumbs";
+
+// module
+@use "./scss/module/header";
+@use "./scss/module/footer";
+@use "./scss/module/fv";
+@use "./scss/module/about";
+@use "./scss/module/item";
+@use "./scss/module/top-news";
+@use "./scss/module/contact";
+
+// page
+@use "./scss/page/products";
+@use "./scss/page/news";

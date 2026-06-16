@@ -1,0 +1,66 @@
+@use "../setting/colors" as *;
+@use "../setting/fonts" as *;
+@use "../mixin/responsive" as *;
+
+.back-to-top {
+  position: fixed;
+  bottom: 15px; /* 下からの距離 */
+  right: 15px; /* 右からの距離 */
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background-color: $color_white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 4px 4px 30px 0px rgba(0, 0, 0, 0.05);
+
+  /* 最初は隠す */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease,
+    visibility 0.6s ease;
+
+  @include responsive(pc) {
+    bottom: 32px; /* 下からの距離 */
+    right: 32px; /* 右からの距離 */
+    width: 72px;
+    height: 72px;
+  }
+
+  span {
+    display: block;
+    width: 12px;
+    height: 12px;
+
+    border-top: 2px solid $color_primary;
+    border-left: 2px solid $color_primary;
+
+    transform: rotate(45deg);
+
+    @include responsive(pc) {
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  &.is-show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}

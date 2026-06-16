@@ -1,0 +1,99 @@
+@use "../setting/colors" as *;
+@use "../setting/fonts" as *;
+@use "../mixin/responsive" as *;
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+
+  background-color: $color_white;
+  font-family: $font-base;
+  color: $color_txt;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  font-style: normal;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+
+h1,
+h2,
+h3,
+h4,
+a {
+  font-family: $font-base;
+  letter-spacing: 0.04em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  display: block;
+  font-family: $font-base;
+}
+
+@media (any-hover: hover) {
+  a,
+  button {
+    opacity: 1;
+    cursor: pointer;
+    transition: opacity 0.5s ease;
+
+    &:hover {
+      opacity: 0.6;
+      text-decoration-line: underline;
+    }
+  }
+}
+
+.container {
+  padding: 0 20px;
+  max-width: 600px;
+  margin: 0 auto;
+
+  @include responsive(tablet) {
+    padding: 0;
+
+    max-width: 560px;
+  }
+
+  @include responsive(pc) {
+    max-width: 960px;
+  }
+}
+
+.pc-hidden {
+  display: block;
+
+  @include responsive(pc) {
+    display: none;
+  }
+}
+
+.sp-hidden {
+  display: none;
+
+  @include responsive(pc) {
+    display: block;
+  }
+}
+
+.demo-note-wrap {
+  background-color: $color_main;
+}
+
+.demo-note {
+  padding-top: 16px;
+  color: #888;
+  font-size: 0.75rem;
+  text-align: right;
+  letter-spacing: 0.04em;
+}
